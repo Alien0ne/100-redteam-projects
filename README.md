@@ -5,3 +5,4 @@
 | Task |                    Name                    | Completed |
 | :--: | :----------------------------------------: | :-------: |
 |  1   | TCP or UDP server just to receive messages |    Yes    |
+|  2   |              TCP chat server               |    Yes    |
