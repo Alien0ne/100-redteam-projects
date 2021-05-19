@@ -21,6 +21,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as clie:
         clie.sendto(data.encode(), (host, int(argv[1])))
         data, addr = clie.recvfrom(4096)
         print("From Server : ", data.decode())
-        print(data)
         if data.lower().decode() == "bye":
             break
