@@ -1,10 +1,9 @@
-from os import name
 import socket
 from sys import argv
 import threading
 
 host = "127.0.0.1"
-name = argv[2]
+
 if len(argv) != 3:
     print(f"Usage:\n\t{argv[0]} <port> <your name>")
     exit()
@@ -17,16 +16,20 @@ except ValueError:
     print("Port must be an number between 1025 and 65535.")
     exit()
 
+name = argv[2]
+running = True
+
 
 def receive():
-    while True:
+    global running
+    while running:
         try:
             data = clie.recv(4096).decode()
-            check = data.lower().find("name")
-            if check == -1:
-                print(data)
-            else:
+            if "name" in data.lower():
                 clie.send(name.encode())
+            else:
+                print(data)
+
         except:
             print("An error occured !")
             clie.close()
@@ -34,9 +37,12 @@ def receive():
 
 
 def write():
-    while True:
+    global running
+    while running:
         message = input()
         clie.send((name+" : "+message).encode())
+        if "bye" in message:
+            running = False
 
 
 clie = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
