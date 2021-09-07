@@ -26,7 +26,7 @@ def encode(plain_text, alphabet):
     print("[+] Cipher Text : ",cipher_text)
     return(cipher_text)
 def decode(cipher_text, alphabet):
-    print("[+] Cipher Text - ",cipher_text)
+    print("[+] Cipher Text : ",cipher_text)
     plain_text=""
     for i in cipher_text:
         try:
@@ -34,7 +34,7 @@ def decode(cipher_text, alphabet):
             plain_text=plain_text+alphabet[index]
         except:
             plain_text=plain_text+i
-    print("[+] Plain Text  - ",plain_text)
+    print("[+] Plain Text : ",plain_text)
     return(plain_text)
 
 alphabet="abcdefghijklmnopqrstuvwxyz"
