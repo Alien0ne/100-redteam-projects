@@ -62,7 +62,7 @@ $ python3 script.py ceaser.py [mode] [-f] {input file} [-t] {input word} [-r] [-
 
         caeser.py decode -t <text> -k <Key/Shift value>
         caeser.py decode -t <input_file_name> -k <key/shift value> -o <output_file_name>
-        
-        caeser.py brute -t <text> -k <key/shift value> 
-        caeser.py brute -t <text> -k <sey/shift value> -v -o <output_file_name>
+
+        caeser.py brute -t <text>  
+        caeser.py brute -t <text> -v -o <output_file_name>
 
